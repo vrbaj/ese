@@ -5,7 +5,7 @@ import math
 def pot(data, method):
     """
     Peak-Over-Threshold method.
-    :param data: input data
+    :param data: input data (n samples)
     :param method: method identifier
     :return: k highest values
     """
@@ -22,8 +22,8 @@ def pot(data, method):
         k = max(int((n ** (2/3))/math.log10(math.log10(n))), 1)
     elif method == 4:
         k = max(int(math.log10(n)), 1)
-    if method == 5:
-        # 20%
+    elif method == 5:
+        # 35%
         k = max(int(0.35 * n), 1)
     return sorted_data[:k]
 

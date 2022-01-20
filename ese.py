@@ -7,7 +7,7 @@ def ese(w, gev_window, filter_len, pot_method):
     """
     :param w: input weights of adaptive filter
     :param gev_window: number of samples that are proceeded via P-O-T method
-    :param filter_len: lenght of adaptive filter (obsolete)
+    :param filter_len: length of adaptive filter (obsolete)
     :param pot_method: identifier of P-O-T method (1,2,3,4,5)
     :return: values of Extreme Seeking Entropy
     """
@@ -26,5 +26,5 @@ def ese(w, gev_window, filter_len, pot_method):
                 if dw[i, j] >= fit[1]:
                     hpp[i - gev_window, j] = 1 - genpareto.cdf(dw[i, j], fit[0], fit[1], fit[2]) + 1e-20
 
-        ese_value = -np.log10(np.prod(hpp, axis=1))
-        return ese_value
+    ese_value = -np.log10(np.prod(hpp, axis=1))
+    return ese_value
