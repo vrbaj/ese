@@ -3,6 +3,12 @@ import math
 
 
 def pot(data, method):
+    """
+    Peak-Over-Threshold method.
+    :param data: input data
+    :param method: method identifier
+    :return: k highest values
+    """
     sorted_data = -np.sort(-data)
     k = 0
     n = len(data)
